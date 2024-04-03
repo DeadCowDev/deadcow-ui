@@ -7,6 +7,7 @@ export * from "./aspect-ratio";
 export * from "./avatar";
 export * from "./badge";
 export * from "./breadcrumb";
+export * from "./burger-menu-button";
 export * from "./button";
 export * from "./calendar";
 export * from "./card";
