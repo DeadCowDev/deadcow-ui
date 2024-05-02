@@ -1,24 +1,44 @@
 {
-  "name": "deadcow-ui",
+  "name": "@deadcow-enterprises/ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "storybook dev -p 6006",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "release": "pnpm lint && pnpm build && changeset publish"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/styles.css": {
+      "import": "./dist/styles.css",
+      "require": "./dist/styles.css"
+    },
+    "./tailwind.config": {
+      "import": "./tailwind.config.js",
+      "require": "./tailwind.config.js"
+    }
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md",
+    "tailwind.config.js"
+  ],
   "peerDependencies": {
-    "clsx": "^2.1.0",
     "lucide-react": "^0.364.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.2.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@chromatic-com/storybook": "^1.2.26",
     "@storybook/addon-essentials": "^8.0.5",
     "@storybook/addon-interactions": "^8.0.5",
@@ -75,6 +95,7 @@
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.0.1",
@@ -83,6 +104,7 @@
     "react-day-picker": "^8.10.0",
     "react-resizable-panels": "^2.0.16",
     "sonner": "^1.4.41",
+    "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.0"
   }

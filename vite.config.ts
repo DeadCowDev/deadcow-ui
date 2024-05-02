@@ -21,7 +21,7 @@ export default defineConfig({
     cssCodeSplit: false,
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "@deadcow/ui",
+      name: "@deadcow-enterprises/ui",
       formats: ["es", "umd"],
       fileName: (format) => `index.${format}.js`,
     },
