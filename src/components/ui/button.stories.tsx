@@ -17,12 +17,6 @@ export const Base: Story = {
   render: (args) => <Button {...args}>Button</Button>,
   args: {},
 };
-export const Pink: Story = {
-  render: (args) => <Button {...args}>Button</Button>,
-  args: {
-    variant: "default-pink",
-  },
-};
 export const Outline: Story = {
   render: (args) => <Button {...args}>Button</Button>,
   args: {
